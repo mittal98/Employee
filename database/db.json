@@ -1,0 +1,11 @@
+{
+    "employeeData": [
+        {
+            "firstName": "mittal",
+            "lastName": "patel",
+            "email": "mittalpatel9800@gmail.com",
+            "mobileNo": "1234567891",
+            "salary": 20000
+        }
+    ]
+}
