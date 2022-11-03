@@ -5,8 +5,8 @@
     <table class="table">
         <thead>
             <tr class="text-center">
-                <th>FIRSTNAME</th>
-                <th>LASTNAME</th>
+                <th>FirstName</th>
+                <th>Lastname</th>
                 <th>EMAIL</th>
                 <th>MOBILE NO</th>
                 <th>SALARY</th>
@@ -28,8 +28,8 @@
                     {{item.mobileNo}}
                 </td>
                 <td>  
-                    {{item.salary}}
-                </td>               
+                    {{item.salary|currency:70}}
+                </td>              
         </tbody>
     </table>
 </div>

@@ -9,20 +9,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { EmployeeService } from '../shared/employee.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PhoneMaskDirective } from '../directive/phone-mask.directive';
+
 
 
 @NgModule({
   declarations: [
     EmployeeComponent,
     EmployeeListComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    PhoneMaskDirective
   ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
     ReactiveFormsModule, 
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers:[
     EmployeeService

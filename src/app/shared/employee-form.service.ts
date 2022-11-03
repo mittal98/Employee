@@ -2,9 +2,7 @@ import { ComponentType, Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EmployeeFormService {
   overlayRef: any;
 
@@ -21,6 +19,7 @@ export class EmployeeFormService {
       hasBackdrop: true,
       panelClass: 'overlay-panel',
       width: 600,
+      
     });
 
     const portal = new ComponentPortal(component);

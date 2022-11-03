@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeFormService } from 'src/app/shared/employee-form.service';
 import { EmployeeService } from 'src/app/shared/employee.service';
+import { RefreshDataService } from 'src/app/shared/refresh-data.service';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { employee } from '../employee.model';
 
@@ -13,9 +14,18 @@ export class EmployeeListComponent implements OnInit {
   public employeeData: employee[]
   constructor(
     private employeeFormService: EmployeeFormService,
-    private employeeService: EmployeeService) { this.employeeData = [] }
+    private employeeService: EmployeeService,
+    private refreshData: RefreshDataService) {
+      this.employeeData = []
+  }
 
   ngOnInit(): void {
+    this.refreshData.refreshData$.subscribe((data: any) => {
+      if (data) {
+        this.getEmployeeData();
+        // console.log(this.getEmployeeData);
+      }
+    })
     this.getEmployeeData()
   }
   addEmployee() {

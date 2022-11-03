@@ -1,16 +1,88 @@
 <!-- employee form -->
-
-<form [formGroup]="employeeForm">
-    <div>
-        <!-- first name -->
-        <div> <label class="control-label ">First Name</label>
-            
+<div class="p-4 border form shadow">
+    <!-- title -->
+    <!-- <h3 class="mb-3 text-center ">{{title}}</h3> -->
+    <form [formGroup]="employeeForm">
+        <div>
+            <!-- first name -->
+            <div><label for="">FirstName</label>
+                <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="firstName"
+                    [ngClass]="{'is-invalid':FormControls['firstName'].invalid && (isSubmitted || FormControls['firstName'].touched || FormControls['firstName'].dirty),
+            'is-valid':FormControls['firstName'].valid && (isSubmitted || FormControls['firstName'].touched || FormControls['firstName'].dirty)}">
+                <!-- validation -->
+                <div
+                    *ngIf="FormControls['firstName'].invalid && (isSubmitted || FormControls['firstName'].touched || FormControls['firstName'].dirty)">
+                    <span class="text-danger" *ngIf="FormControls['firstName'].errors?.['required']">
+                        FirstName is required
+                    </span>
+                </div>
+            </div>
+            <!-- last name -->
+            <div>
+                <div><label for="">LastName</label>
+                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="lastName"
+                        [ngClass]="{'is-invalid':FormControls['lastName'].invalid && (isSubmitted || FormControls['lastName'].touched || FormControls['lastName'].dirty),
+            'is-valid':FormControls['lastName'].valid && (isSubmitted || FormControls['lastName'].touched || FormControls['lastName'].dirty)}">
+                    <!-- validation -->
+                    <div
+                        *ngIf="FormControls['lastName'].invalid && (isSubmitted || FormControls['lastName'].touched || FormControls['lastName'].dirty)">
+                        <span class="text-danger" *ngIf="FormControls['lastName'].errors?.['required']">
+                            LastName is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- email -->
+            <div>
+                <div><label for="">Email</label>
+                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="email"
+                        [ngClass]="{'is-invalid':FormControls['email'].invalid && (isSubmitted || FormControls['email'].touched || FormControls['email'].dirty),
+'is-valid':FormControls['email'].valid && (isSubmitted || FormControls['email'].touched || FormControls['email'].dirty)}">
+                    <!-- validation -->
+                    <div
+                        *ngIf="FormControls['email'].invalid && (isSubmitted || FormControls['email'].touched || FormControls['email'].dirty)">
+                        <span class="text-danger" *ngIf="FormControls['email'].errors?.['required']">
+                            Email is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile no -->
+            <div>
+                <div><label for="">Mobile No</label>
+                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="mobileNo" appPhoneMask
+                        [ngClass]="{'is-invalid':FormControls['mobileNo'].invalid && (isSubmitted || FormControls['mobileNo'].touched || FormControls['mobileNo'].dirty),
+'is-valid':FormControls['mobileNo'].valid && (isSubmitted || FormControls['mobileNo'].touched || FormControls['mobileNo'].dirty)}">
+                    <!-- validation -->
+                    <div
+                        *ngIf="FormControls['mobileNo'].invalid && (isSubmitted || FormControls['mobileNo'].touched || FormControls['mobileNo'].dirty)">
+                        <span class="text-danger" *ngIf="FormControls['mobileNo'].errors?.['required']">
+                            Mobile No is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- salary -->
+            <div>
+                <div><label for="">Salary</label>
+                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="salary"
+                        [ngClass]="{'is-invalid':FormControls['salary'].invalid && (isSubmitted || FormControls['salary'].touched || FormControls['salary'].dirty),
+'is-valid':FormControls['salary'].valid && (isSubmitted || FormControls['salary'].touched || FormControls['salary'].dirty)}">
+                    <!-- validation -->
+                    <div
+                        *ngIf="FormControls['salary'].invalid && (isSubmitted || FormControls['salary'].touched || FormControls['salary'].dirty)">
+                        <span class="text-danger" *ngIf="FormControls['salary'].errors?.['required']">
+                            salary is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <!-- cancel button -->
+                <button type="reset" class="btn btn-light me-3 border">CANCEL</button>
+               <!--save button -->
+                 <button type="submit" class="btn btn-light border" (click)="onSave()">SAVE</button>
+            </div>
         </div>
-        <div class="text-end">
-            <!-- cancel button -->
-            <button type="reset" class="btn btn-light me-3 border">CANCEL</button>
-            <!-- save button -->
-            <button type="submit" class="btn btn-light border">SAVE</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
