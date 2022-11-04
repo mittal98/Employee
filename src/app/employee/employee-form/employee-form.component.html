@@ -1,7 +1,7 @@
 <!-- employee form -->
 <div class="p-4 border form shadow">
     <!-- title -->
-    <!-- <h3 class="mb-3 text-center ">{{title}}</h3> -->
+    <h3 class="mb-3 text-center ">{{title}}</h3>
     <form [formGroup]="employeeForm">
         <div>
             <!-- first name -->
@@ -35,7 +35,7 @@
             <!-- email -->
             <div>
                 <div><label for="">Email</label>
-                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="email"
+                    <input class="form-control mb-4 shadow-sm bg-light" type="email" formControlName="email"
                         [ngClass]="{'is-invalid':FormControls['email'].invalid && (isSubmitted || FormControls['email'].touched || FormControls['email'].dirty),
 'is-valid':FormControls['email'].valid && (isSubmitted || FormControls['email'].touched || FormControls['email'].dirty)}">
                     <!-- validation -->
@@ -50,7 +50,7 @@
             <!-- mobile no -->
             <div>
                 <div><label for="">Mobile No</label>
-                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="mobileNo" appPhoneMask
+                    <input class="form-control mb-4 shadow-sm bg-light" type="number" formControlName="mobileNo" appPhoneMask
                         [ngClass]="{'is-invalid':FormControls['mobileNo'].invalid && (isSubmitted || FormControls['mobileNo'].touched || FormControls['mobileNo'].dirty),
 'is-valid':FormControls['mobileNo'].valid && (isSubmitted || FormControls['mobileNo'].touched || FormControls['mobileNo'].dirty)}">
                     <!-- validation -->
@@ -65,7 +65,7 @@
             <!-- salary -->
             <div>
                 <div><label for="">Salary</label>
-                    <input class="form-control mb-4 shadow-sm bg-light" type="text" formControlName="salary"
+                    <input class="form-control mb-4 shadow-sm bg-light" type="number" formControlName="salary"
                         [ngClass]="{'is-invalid':FormControls['salary'].invalid && (isSubmitted || FormControls['salary'].touched || FormControls['salary'].dirty),
 'is-valid':FormControls['salary'].valid && (isSubmitted || FormControls['salary'].touched || FormControls['salary'].dirty)}">
                     <!-- validation -->

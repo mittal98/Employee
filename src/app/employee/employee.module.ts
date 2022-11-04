@@ -10,7 +10,8 @@ import { SharedModule } from '../shared/shared.module';
 import { EmployeeService } from '../shared/employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneMaskDirective } from '../directive/phone-mask.directive';
-
+import { EditDataResolver } from './edit-data.resolver';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -26,10 +27,11 @@ import { PhoneMaskDirective } from '../directive/phone-mask.directive';
     ReactiveFormsModule, 
     SharedModule,
     HttpClientModule,
-   
+    InfiniteScrollModule,
   ],
   providers:[
-    EmployeeService
+    EmployeeService,
+    EditDataResolver
   ]
 })
 export class EmployeeModule { }

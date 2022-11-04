@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { EmployeeFormService } from 'src/app/shared/employee-form.service';
 import { EmployeeService } from 'src/app/shared/employee.service';
 import { RefreshDataService } from 'src/app/shared/refresh-data.service';
@@ -11,12 +12,13 @@ import { employee } from '../employee.model';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-  public employeeData: employee[]
+  public employeeData: employee[];
   constructor(
     private employeeFormService: EmployeeFormService,
     private employeeService: EmployeeService,
-    private refreshData: RefreshDataService) {
-      this.employeeData = []
+    private refreshData: RefreshDataService,
+    private router: Router) {
+    this.employeeData = []
   }
 
   ngOnInit(): void {
@@ -37,4 +39,10 @@ export class EmployeeListComponent implements OnInit {
       this.employeeData = data
     })
   }
+
+  editEmployee(employee:employee):void {
+    this.router.navigate(['employee/edit',employee.id])
+  }
+  
+  
 }

@@ -2,34 +2,36 @@
     <div class="text-end"><button type="button" class="btn btn-outline-success rounded " (click)="addEmployee()">
             New Employee</button></div>
     <h4 class="text-center mb-3">EMPLOYEE LIST</h4>
-    <table class="table">
-        <thead>
-            <tr class="text-center">
-                <th>FirstName</th>
-                <th>Lastname</th>
-                <th>EMAIL</th>
-                <th>MOBILE NO</th>
-                <th>SALARY</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tbody>
-            <tr *ngFor="let item of employeeData" class="text-center">
-                <td>  
-                    {{item.firstName}}
-                </td>
-                <td>  
-                    {{item.lastName}}
-                </td>
-                <td>  
-                    {{item.email}}
-                </td>
-                <td>  
-                    {{item.mobileNo}}
-                </td>
-                <td>  
-                    {{item.salary|currency:70}}
-                </td>              
-        </tbody>
-    </table>
-</div>
+   
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>NO</th>
+                    <th>EMPLOYEENAME</th> 
+                    <th>EMAIL</th>
+                    <th>MOBILE NO</th>
+                    <th>SALARY</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tbody>
+                <tr *ngFor="let item of employeeData" class="text-center" [routerLink]="['edit/'+item.id]"
+                    (click)="addEmployee()" (click)="editEmployee(item)">
+                    <td>{{item.id}}</td>
+                    <td>
+                        {{item.firstName}}
+                    </td>
+                    
+                    <td>
+                        {{item.email}}
+                    </td>
+                    <td>
+                        {{item.mobileNo}}
+                    </td>
+                    <td>
+                        {{item.salary|currency:70}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

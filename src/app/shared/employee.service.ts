@@ -11,6 +11,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) { // baseurl
     this.baseUrl = "http://localhost:3000/employeeData/";
   }
+  
   //get method
   getEmployee(): Observable<employee[]> {
     const url: string = this.baseUrl;
@@ -36,5 +37,6 @@ export class EmployeeService {
     const url: string = this.baseUrl + id;
     return this.http.put<employee>(url, employeeData)
   }
+
 }
 
